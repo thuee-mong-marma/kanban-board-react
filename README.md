@@ -1,6 +1,6 @@
 # Kanban Board Project with React and Redux Toolkit
 
-See the published web app:
+See the published web app: [Live Demo](https://kanban-board-react-kohl.vercel.app/)
 
 ## How to run this project on your computer:
 
