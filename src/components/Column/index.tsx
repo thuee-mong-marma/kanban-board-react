@@ -6,7 +6,6 @@ import ICard from "../../interfaces/ICard";
 import IStatus from "../../interfaces/IStatus";
 import Card from "../Card";
 import { CardsList, Container } from "./components";
-import { ButtonAddCard } from "../ButtonAddCard";
 
 interface ColumnProps {
     status: IStatus;

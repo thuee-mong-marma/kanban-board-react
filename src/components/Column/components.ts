@@ -8,7 +8,7 @@ interface ContainerProps {
 export const Container = styled.div<ContainerProps>`
     padding: 0.75rem;
     border-radius: 10px;
-    background-color: white;
+    background-color: ${({ theme }) => theme.colors.column_background};
 
     ${({ isFirstColumn }) =>
         isFirstColumn &&
@@ -25,7 +25,7 @@ export const Container = styled.div<ContainerProps>`
 
 export const CardsList = styled.div`
     margin-top: 1rem;
-    height: 60vh;
+    height: 50vh;
     width: 300px;
     overflow-y: auto;
     overflow-x: hidden;

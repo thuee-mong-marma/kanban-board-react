@@ -55,7 +55,7 @@ export const FiltersContainer = styled.div`
 `;
 
 export const LabelContainer = styled.div<LabelContainerProps>`
-    padding: 5px;
+    padding: 5px 10px;
     background-color: ${({ color }) => color};
     display: flex;
     flex-direction: row;

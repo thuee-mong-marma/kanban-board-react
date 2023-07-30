@@ -20,12 +20,18 @@ export default createGlobalStyle`
 
   h1 {
     font-size: 3rem;
-    line-height: 3rem;
-    padding-bottom: 1rem;
-    color: ${({ theme }) => theme.colors.text_secondary};
+    line-height: 100%;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid;
+    border-radius: 10px;
+    color: ${({ theme }) => theme.colors.primary};
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
 
-    span{
-      color: ${({ theme }) => theme.colors.primary};
+    :hover {
+      background-color: ${({ theme }) => theme.colors.primary};
+      color: ${({ theme }) => theme.colors.background}
     }
 
     @media(max-width: ${SCREEN_BREAKPOINTS.MEDIUM}px) {

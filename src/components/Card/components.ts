@@ -26,6 +26,8 @@ export const CardContainer = styled.div<CardContainerProps>`
 
     position: relative;
 
+    cursor: pointer !important;
+
     h3 {
         text-overflow: ellipsis;
         width: 100%;
@@ -59,6 +61,19 @@ export const CardBorder = styled.div<ColorProps>`
     }
 `;
 
+export const CardTitle = styled.h3`
+    text-overflow: ellipsis;
+    width: 100%;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+
+    :hover {
+        cursor: text;
+    }
+`;
+
 export const CardBottom = styled.div`
     display: flex;
     flex-direction: row;
@@ -79,6 +94,6 @@ export const CardButton = styled.button`
     font-size: 14px;
     font-weight: bold;
     text-transform: uppercase;
-    padding: 4px 10px;
+    padding: 5px 10px;
     cursor: pointer;
 `;

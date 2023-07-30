@@ -5,7 +5,6 @@ import { ThemeContext } from "styled-components";
 
 import getCategoryBackgroundColor from "../../helpers/getCategoryBackgroundColor";
 import { useModal } from "../../hooks/useModal";
-import { useAppSelector } from "../../hooks/useRedux";
 import ICard from "../../interfaces/ICard";
 import Badge from "../Badge";
 
@@ -13,7 +12,8 @@ import {
     CardBorder,
     CardBottom,
     CardContainer,
-    CardButton
+    CardButton,
+    CardTitle
 } from "./components";
 
 interface CardProps {
@@ -50,7 +50,7 @@ const Card: React.FC<CardProps> = ({ card, index }) => {
                     {...provided.dragHandleProps}
                 >
                     <CardBorder color={backgroundColor} />
-                    <h3>{card.title}</h3>
+                    <CardTitle>{card.title}</CardTitle>
                     <CardBottom>
                         <Badge category={card.category} />
                         <CardButton onClick={() => toggleVisibility(card)}>

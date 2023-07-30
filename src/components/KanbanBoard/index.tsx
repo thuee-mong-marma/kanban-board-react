@@ -11,7 +11,7 @@ import IStatus from "../../interfaces/IStatus";
 import IColumn from "../../interfaces/IColumn";
 import ICategory from "../../interfaces/ICategory";
 import Column from "../Column";
-import Modal from "../Modal";
+import Modal from "../CardModal";
 import SearchInput from "../SearchInput";
 import getCategoryBackgroundColor from "../../helpers/getCategoryBackgroundColor";
 import { useModal } from "../../hooks/useModal";
@@ -154,9 +154,7 @@ const KanbanBoard: React.FC<KanbanBoardProps> = ({ toggleTheme }) => {
             <Container>
                 <Header>
                     <TitleAndSwitch>
-                        <h1>
-                            Kanban <span>Board</span>
-                        </h1>
+                        <h1>Kanban Board</h1>
                         <Switch
                             onChange={toggleTheme}
                             checked={title === "light"}
