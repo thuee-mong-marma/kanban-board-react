@@ -9,18 +9,6 @@ export const Container = styled.div<ContainerProps>`
     padding: 0.75rem;
     border-radius: 10px;
     background-color: ${({ theme }) => theme.colors.column_background};
-
-    ${({ isFirstColumn }) =>
-        isFirstColumn &&
-        `
-  `}
-    @media (max-width: ${SCREEN_BREAKPOINTS.EXTRA_LARGE}px) {
-        ${({ isFirstColumn }) =>
-            isFirstColumn &&
-            `
-    margin-left: 2rem;
-    `}
-    }
 `;
 
 export const CardsList = styled.div`

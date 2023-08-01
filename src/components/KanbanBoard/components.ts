@@ -12,6 +12,8 @@ export const Container = styled.div`
     width: 100%;
     padding: 5rem 0 5rem 0;
     position: relative;
+    max-width: 1440px;
+    margin: 0 auto;
 
     @media (max-width: ${SCREEN_BREAKPOINTS.EXTRA_LARGE}px) {
         padding: 2rem 0 2rem 0;
@@ -25,7 +27,8 @@ export const SwitchIcon = styled.img`
 `;
 
 export const StatusesColumnsContainer = styled.div`
-    padding-top: 4rem;
+    padding-top: 3rem;
+    padding-bottom: 1.5rem;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -50,7 +53,7 @@ export const FiltersContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    gap: 2rem;
+    gap: 1rem;
     padding-top: 1.5rem;
 `;
 
@@ -74,10 +77,12 @@ export const LabelContainer = styled.div<LabelContainerProps>`
 `;
 
 export const SearchAndFilters = styled.div`
-    width: auto;
+    width: 100%;
+    max-width: 800px;
 
     @media (max-width: ${SCREEN_BREAKPOINTS.EXTRA_LARGE}px) {
         width: 100%;
+        max-width: unset;
     }
 `;
 
@@ -88,9 +93,5 @@ export const TitleAndSwitch = styled.div`
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-
-        h1 {
-            padding-bottom: 0;
-        }
     }
 `;

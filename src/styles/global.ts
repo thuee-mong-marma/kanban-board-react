@@ -16,6 +16,10 @@ export default createGlobalStyle`
     overflow-y: auto;
     padding: 0 40px;
     margin: 0 auto;
+
+    @media(max-width: ${SCREEN_BREAKPOINTS.EXTRA_SMALL}px) {
+      padding: 0 20px;
+    }
   }
 
   h1 {
@@ -34,9 +38,13 @@ export default createGlobalStyle`
       color: ${({ theme }) => theme.colors.background}
     }
 
+    @media(max-width: ${SCREEN_BREAKPOINTS.EXTRA_LARGE}px) {
+      margin-bottom: 0;
+    }
+
     @media(max-width: ${SCREEN_BREAKPOINTS.MEDIUM}px) {
-      font-size: 2.5rem;
-      line-height: 2.5rem;
+      font-size: 2rem;
+      line-height: 2rem;
     }
   }
 

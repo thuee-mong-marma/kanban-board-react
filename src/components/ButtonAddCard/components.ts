@@ -20,12 +20,12 @@ export const Container = styled.div`
         font-weight: bold;
     }
 
-    @media (max-width: ${SCREEN_BREAKPOINTS.EXTRA_LARGE}px) {
-        margin: 2rem 2rem 0 2rem;
-    }
+    // @media (max-width: ${SCREEN_BREAKPOINTS.EXTRA_LARGE}px) {
+    //     margin: 2rem 2rem 0 2rem;
+    // }
 
     @media (max-width: ${SCREEN_BREAKPOINTS.MEDIUM}px) {
-        width: calc(100% - 4rem);
+        width: 100%;
         top: 90vh;
         left: 80vw;
 

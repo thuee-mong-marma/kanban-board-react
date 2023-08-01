@@ -5,6 +5,9 @@ import { ThemeContext } from "styled-components";
 
 import getCategoryBackgroundColor from "../../helpers/getCategoryBackgroundColor";
 import { useModal } from "../../hooks/useModal";
+import { useAppDispatch } from "../../hooks/useRedux";
+import { deleteCard } from "../../store/slices/cards.slice";
+import { updateColumns } from "../../store/slices/columns.slice";
 import ICard from "../../interfaces/ICard";
 import Badge from "../Badge";
 
@@ -13,7 +16,8 @@ import {
     CardBottom,
     CardContainer,
     CardButton,
-    CardTitle
+    CardTitle,
+    CardDeleteButton
 } from "./components";
 
 interface CardProps {
@@ -30,6 +34,8 @@ const Card: React.FC<CardProps> = ({ card, index }) => {
 
     const { toggleVisibility } = useModal();
 
+    const dispatch = useAppDispatch();
+
     useEffect(() => {
         if (card) {
             const categoryColor = getCategoryBackgroundColor(
@@ -39,6 +45,11 @@ const Card: React.FC<CardProps> = ({ card, index }) => {
             setBackgroundColor(categoryColor);
         }
     }, [card]);
+
+    const handleDelete = () => {
+        dispatch(deleteCard(card));
+        dispatch(updateColumns(card.id));
+    };
 
     return (
         <Draggable draggableId={card.id} index={index}>
@@ -51,6 +62,9 @@ const Card: React.FC<CardProps> = ({ card, index }) => {
                 >
                     <CardBorder color={backgroundColor} />
                     <CardTitle>{card.title}</CardTitle>
+                    <CardDeleteButton onClick={handleDelete}>
+                        X
+                    </CardDeleteButton>
                     <CardBottom>
                         <Badge category={card.category} />
                         <CardButton onClick={() => toggleVisibility(card)}>

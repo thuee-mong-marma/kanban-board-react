@@ -27,15 +27,6 @@ export const CardContainer = styled.div<CardContainerProps>`
     position: relative;
 
     cursor: pointer !important;
-
-    h3 {
-        text-overflow: ellipsis;
-        width: 100%;
-        overflow: hidden;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-    }
 `;
 
 export const CardBorder = styled.div<ColorProps>`
@@ -63,7 +54,7 @@ export const CardBorder = styled.div<ColorProps>`
 
 export const CardTitle = styled.h3`
     text-overflow: ellipsis;
-    width: 100%;
+    width: calc(100% - 2rem);
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -95,5 +86,19 @@ export const CardButton = styled.button`
     font-weight: bold;
     text-transform: uppercase;
     padding: 5px 10px;
+    cursor: pointer;
+`;
+
+export const CardDeleteButton = styled.button`
+    background-color: #db4b4b;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    position: absolute;
+    top: 1.2rem;
+    right: 1rem;
     cursor: pointer;
 `;
