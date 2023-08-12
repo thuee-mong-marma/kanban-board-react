@@ -20,10 +20,20 @@ export const Container = styled.div`
     }
 `;
 
-export const SwitchIcon = styled.img`
-    margin: 4px;
-    height: 70%;
-    width: 70%;
+export const SwitchContainer = styled.div`
+    display: flex;
+    align-items: center;
+
+    @media (max-width: ${SCREEN_BREAKPOINTS.EXTRA_SMALL}px) {
+        margin-top: 10px;
+    }
+`;
+
+export const SwitchTitle = styled.h3`
+    margin: 0 10px;
+    color: ${({ theme }) => theme.colors.text_primary}
+    line-height: 100%;
+    font-weight: bold;
 `;
 
 export const StatusesColumnsContainer = styled.div`
@@ -93,5 +103,10 @@ export const TitleAndSwitch = styled.div`
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+    }
+
+    @media (max-width: ${SCREEN_BREAKPOINTS.EXTRA_SMALL}px) {
+        flex-direction: column;
+        align-items: flex-start;
     }
 `;

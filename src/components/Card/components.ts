@@ -13,7 +13,7 @@ export const CardContainer = styled.div<CardContainerProps>`
     opacity: ${({ hideCard }) => (hideCard ? 0.2 : 1)};
 
     width: 300px;
-    height: 110px;
+    height: 120px;
     margin: 0.7rem 0;
     padding: 1.2rem 1rem 0.7rem 1rem;
 
@@ -54,7 +54,7 @@ export const CardBorder = styled.div<ColorProps>`
 
 export const CardTitle = styled.h3`
     text-overflow: ellipsis;
-    width: calc(100% - 2rem);
+    width: calc(100% - 2.5rem);
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -71,6 +71,7 @@ export const CardBottom = styled.div`
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    margin-top: 5px;
 
     p {
         cursor: pointer !important;

@@ -40,9 +40,7 @@ export const cardsSlice = createSlice({
             state.cards = updatedCards;
         },
         deleteCard: (state, action) => {
-            console.log(state, action);
-            return;
-            const cardId = action.payload.id;
+            const cardId = action.payload;
 
             state.cards = state.cards.filter((card) => card.id !== cardId);
         },

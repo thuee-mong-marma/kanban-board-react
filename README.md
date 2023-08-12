@@ -14,11 +14,11 @@ or
 
 Now for running the project, if you installed the dependencies using yarn, run:
 
-### `yarn start`
+### `yarn dev`
 
 or if you used npm, run:
 
-### `npm start`
+### `npm run dev`
 
 That´s it! The project will automatically open up in your default browser, using the url:
 

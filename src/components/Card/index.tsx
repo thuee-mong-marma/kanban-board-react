@@ -7,7 +7,7 @@ import getCategoryBackgroundColor from "../../helpers/getCategoryBackgroundColor
 import { useModal } from "../../hooks/useModal";
 import { useAppDispatch } from "../../hooks/useRedux";
 import { deleteCard } from "../../store/slices/cards.slice";
-import { updateColumns } from "../../store/slices/columns.slice";
+import { removeCardFromColumns } from "../../store/slices/columns.slice";
 import ICard from "../../interfaces/ICard";
 import Badge from "../Badge";
 
@@ -47,8 +47,8 @@ const Card: React.FC<CardProps> = ({ card, index }) => {
     }, [card]);
 
     const handleDelete = () => {
-        dispatch(deleteCard(card));
-        dispatch(updateColumns(card.id));
+        dispatch(deleteCard(card.id));
+        dispatch(removeCardFromColumns(card.id));
     };
 
     return (

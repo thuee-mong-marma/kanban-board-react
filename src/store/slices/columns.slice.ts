@@ -22,6 +22,7 @@ export const columnsSlice = createSlice({
             state.columns = action.payload;
         },
         updateColumns: (state, action) => {
+            console.log("action", action);
             const cardId = action.payload;
 
             const column = state.columns.find(
@@ -40,10 +41,21 @@ export const columnsSlice = createSlice({
 
                 state.columns = [updatedColumn, ...columns];
             }
+        },
+        removeCardFromColumns: (state, action) => {
+            const cardId = action.payload;
+
+            state.columns.forEach((column) => {
+                const updatedCardsIds = column.cardsIds.filter(
+                    (id) => id !== cardId
+                );
+                column.cardsIds = updatedCardsIds;
+            });
         }
     }
 });
 
-export const { setColumns, updateColumns } = columnsSlice.actions;
+export const { setColumns, updateColumns, removeCardFromColumns } =
+    columnsSlice.actions;
 
 export default columnsSlice.reducer;

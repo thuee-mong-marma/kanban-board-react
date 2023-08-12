@@ -4,8 +4,6 @@ import Switch from "react-switch";
 import { ThemeContext } from "styled-components";
 import { DragDropContext, DropResult } from "react-beautiful-dnd";
 
-import MoonIcon from "../../assets/moon.png";
-import SunIcon from "../../assets/sun.png";
 import ICard from "../../interfaces/ICard";
 import IStatus from "../../interfaces/IStatus";
 import IColumn from "../../interfaces/IColumn";
@@ -23,7 +21,8 @@ import {
     LabelContainer,
     SearchAndFilters,
     StatusesColumnsContainer,
-    SwitchIcon,
+    SwitchContainer,
+    SwitchTitle,
     TitleAndSwitch
 } from "./components";
 import { setColumns } from "../../store/slices/columns.slice";
@@ -155,16 +154,18 @@ const KanbanBoard: React.FC<KanbanBoardProps> = ({ toggleTheme }) => {
                 <Header>
                     <TitleAndSwitch>
                         <h1>Kanban Board</h1>
-                        <Switch
-                            onChange={toggleTheme}
-                            checked={title === "light"}
-                            checkedIcon={<SwitchIcon src={SunIcon} alt="Sun" />}
-                            uncheckedIcon={
-                                <SwitchIcon src={MoonIcon} alt="Moon" />
-                            }
-                            onColor={colors.primary}
-                            offColor={colors.switch}
-                        />
+                        <SwitchContainer>
+                            <SwitchTitle>Dark</SwitchTitle>
+                            <Switch
+                                onChange={toggleTheme}
+                                checked={title === "light"}
+                                checkedIcon={false}
+                                uncheckedIcon={false}
+                                onColor={colors.primary}
+                                offColor={colors.switch}
+                            />
+                            <SwitchTitle>Light</SwitchTitle>
+                        </SwitchContainer>
                     </TitleAndSwitch>
                     <SearchAndFilters>
                         <SearchInput />
